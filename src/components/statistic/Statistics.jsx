@@ -22,17 +22,19 @@ export const Statistics = ({ stats, title }) => {
   return (
     <StyledStatistics>
       {title && <StyledTitle>{title}</StyledTitle>}
-      <StyledStatList>
-        {stats.map(({ id, label, percentage }) => {
-          let randomHexColor = generateRandomHexColor();
-          return (
-            <StyledStatElement key={id} elementColor={randomHexColor}>
-              <span className="label">{label}</span>
-              <span className="percentage">{percentage}%</span>
-            </StyledStatElement>
-          );
-        })}
-      </StyledStatList>
+      {stats.length !== 0 && (
+        <StyledStatList>
+          {stats.map(({ id, label, percentage }) => {
+            let randomHexColor = generateRandomHexColor();
+            return (
+              <StyledStatElement key={id} elementColor={randomHexColor}>
+                <span className="label">{label}</span>
+                <span className="percentage">{percentage}%</span>
+              </StyledStatElement>
+            );
+          })}
+        </StyledStatList>
+      )}
     </StyledStatistics>
   );
 };
