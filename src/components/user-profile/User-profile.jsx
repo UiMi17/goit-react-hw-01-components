@@ -1,26 +1,58 @@
+// Libraries
+import PropTypes from 'prop-types';
+// Styles
+import { StyledProfile } from './styles/Styled.profile';
+import {
+  StyledDescription,
+  StyledAvatar,
+  StyledName,
+  StyledTag,
+  StyledLocation,
+} from './styles/Styled.desc';
+import {
+  StyledStats,
+  StyledElement,
+  StyledLabel,
+  StyledQuantity,
+} from './styles/Styled.stats';
+
 export const Profile = ({ username, tag, location, avatar, stats }) => {
+  console.log(stats);
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+    <StyledProfile>
+      <StyledDescription>
+        <StyledAvatar src={avatar} alt="User avatar" />
+        <StyledName>{username}</StyledName>
+        <StyledTag>@{tag}</StyledTag>
+        <StyledLocation>{location}</StyledLocation>
+      </StyledDescription>
+      <StyledStats>
+        <StyledElement>
+          <StyledLabel>Followers</StyledLabel>
+          <StyledQuantity>{stats.followers}</StyledQuantity>
+        </StyledElement>
+        <StyledElement>
+          <StyledLabel>Views</StyledLabel>
+          <StyledQuantity>{stats.views}</StyledQuantity>
+        </StyledElement>
+        <StyledElement>
+          <StyledLabel>Likes</StyledLabel>
+          <StyledQuantity>{stats.likes}</StyledQuantity>
+        </StyledElement>
+      </StyledStats>
+    </StyledProfile>
   );
+};
+
+// Prop types
+Profile.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
 };
