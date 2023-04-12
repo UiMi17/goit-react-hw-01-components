@@ -17,7 +17,6 @@ import {
 } from './styles/Styled.stats';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
-  console.log(stats);
   return (
     <StyledProfile>
       <StyledDescription>
