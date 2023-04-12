@@ -6,6 +6,7 @@ export const StyledStatistics = styled.section`
   align-items: center;
   min-height: 350px;
   padding: 100px;
+  padding-top: 120px;
   background-color: #ffcc00;
 `;
 

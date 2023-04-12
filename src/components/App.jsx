@@ -14,17 +14,17 @@ import { TransactionHistory } from './transaction-history/Transactions';
 export const App = () => {
   return (
     <>
-      {/* <Profile
+      <Profile
         username={user.username}
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
         stats={user.stats}
-      /> */}
+      />
 
-      {/* <Statistics title={'Upload stats'} stats={stats} /> */}
+      <Statistics title={'Upload stats'} stats={stats} />
 
-      {/* <FriendList friends={friends} /> */}
+      <FriendList friends={friends} />
 
       <TransactionHistory items={transactions}/>
     </>

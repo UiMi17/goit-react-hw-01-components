@@ -7,6 +7,7 @@ export const StyledProfile = styled.div`
   flex-direction: column;
   background-color: #f7f7f7;
   padding: 20px;
+  padding-bottom: 120px;
 `;
 
 
