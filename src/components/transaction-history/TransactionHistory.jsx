@@ -6,7 +6,7 @@ import {
   StyledTRow,
   StyledTh,
   StyledTd,
-} from './styles/StyledTransactions';
+} from './StyledTransactions';
 
 export const TransactionHistory = ({ items }) => {
   return (

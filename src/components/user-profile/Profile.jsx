@@ -1,20 +1,20 @@
 // Libraries
 import PropTypes from 'prop-types';
 // Styles
-import { StyledProfile } from './styles/Styled.profile';
+import { StyledProfile } from './Styled.profile';
 import {
   StyledDescription,
   StyledAvatar,
   StyledName,
   StyledTag,
   StyledLocation,
-} from './styles/Styled.desc';
+} from './Styled.desc';
 import {
   StyledStats,
   StyledElement,
   StyledLabel,
   StyledQuantity,
-} from './styles/Styled.stats';
+} from './Styled.stats';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (

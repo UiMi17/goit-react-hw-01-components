@@ -6,7 +6,7 @@ import {
   StyledTitle,
   StyledStatList,
   StyledStatElement,
-} from './styles/Styled-statistics';
+} from './Styled-statistics';
 
 export const Statistics = ({ stats, title }) => {
   // Rand hex color func
@@ -40,6 +40,12 @@ export const Statistics = ({ stats, title }) => {
 };
 
 Statistics.propTypes = {
-  stats: PropTypes.arrayOf(PropTypes.object),
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
   title: PropTypes.string,
 };

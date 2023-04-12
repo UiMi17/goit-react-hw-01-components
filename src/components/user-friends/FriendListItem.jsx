@@ -1,7 +1,7 @@
 import {
   StyledFriendListElement,
   StyledStatus,
-} from './styles/StyledFriend-elements';
+} from './StyledFriend-elements';
 
 export const FriendListItem = ({ userAvatar, username, isOnline }) => {
   return (
