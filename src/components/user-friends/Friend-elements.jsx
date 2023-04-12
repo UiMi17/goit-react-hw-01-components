@@ -1,10 +1,16 @@
-export const FriendListItem = ({ userAvatar, username, isOnline}) => {
+import {
+  StyledFriendListElement,
+  StyledStatus,
+} from './styles/StyledFriend-elements';
+
+export const FriendListItem = ({ userAvatar, username, isOnline }) => {
   return (
-    <li className="item">
-      <span className="status"></span>
+    <StyledFriendListElement>
+      <StyledStatus
+        spanColor={isOnline === false ? 'red' : 'lightgreen'}
+      ></StyledStatus>
       <img className="avatar" src={userAvatar} alt="User avatar" width="48" />
       <p className="name">{username}</p>
-    </li>
+    </StyledFriendListElement>
   );
 };
-

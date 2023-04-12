@@ -1,8 +1,13 @@
+// Libraries
+import PropTypes from 'prop-types';
+// Files
 import { FriendListItem } from './Friend-elements';
+// Styles
+import { StyledFriendList } from './styles/StyledFriend-list';
 
-export const FriendList = ({friends}) => {
+export const FriendList = ({ friends }) => {
   return (
-    <ul className="friend-list">
+    <StyledFriendList>
       {friends.map(friend => {
         return (
           <FriendListItem
@@ -13,6 +18,17 @@ export const FriendList = ({friends}) => {
           />
         );
       })}
-    </ul>
+    </StyledFriendList>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
 };
